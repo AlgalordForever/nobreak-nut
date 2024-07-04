@@ -3,15 +3,15 @@
 # Run custom commands after container startup
 
 echo "-------------------------------Running 1/3-------------------------------"
-/lib/nut/blazer_ser -a tsshara
-if [ $? -ne 0 ]; then
-    echo "Error running /lib/nut/blazer_ser"
-fi
-
-#/lib/nut/nutdrv_qx -a tsshara
+#/lib/nut/blazer_ser -a tsshara
 #if [ $? -ne 0 ]; then
-#    echo "Error running /lib/nut/nutdrv_qx"
+#    echo "Error running /lib/nut/blazer_ser"
 #fi
+
+/lib/nut/nutdrv_qx -a tsshara
+if [ $? -ne 0 ]; then
+    echo "Error running /lib/nut/nutdrv_qx"
+fi
 echo ""
 echo ""
 echo ""
