@@ -1,0 +1,87 @@
+views:
+  - title: Home
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: vertical-stack
+            title: Nobreak
+            cards:
+              - type: conditional
+                conditions:
+                  - condition: state
+                    entity: sensor.tsshara_dados_do_status
+                    state_not: unavailable
+                card:
+                  type: grid
+                  square: false
+                  columns: 3
+                  cards:
+                    - type: custom:button-card
+                      entity: sensor.tsshara_dados_do_status
+                      name: Status
+                      icon: |
+                        [[[
+                          if (entity.state === 'OL') return 'mdi:power-plug';
+                          if (entity.state === 'OB') return 'mdi:car-battery';
+                          return 'mdi:help-circle-outline';
+                        ]]]
+                      styles:
+                        icon:
+                          - color: |
+                              [[[
+                                return entity.state === 'OL' ? 'green' : entity.state === 'OB' ? 'red' : '';
+                              ]]]
+                    - type: gauge
+                      name: Carga da Bateria
+                      entity: sensor.tsshara_carga_da_bateria
+                      min: 0
+                      severity:
+                        green: 100
+                        yellow: 50
+                        red: 0
+                      max: 100
+                    - type: gauge
+                      name: Carregar
+                      entity: sensor.tsshara_carregar
+                      min: 0
+                      max: 100
+                      severity:
+                        green: 0
+                        yellow: 50
+                        red: 80
+                    - type: gauge
+                      name: Temperatura
+                      entity: sensor.tsshara_temperatura_da_ups
+                      min: 0
+                      max: 100
+                      severity:
+                        green: 0
+                        yellow: 30
+                        red: 50
+                    - type: gauge
+                      name: Tensão de Entrada
+                      entity: sensor.tsshara_tensao_de_entrada
+                      min: 0
+                      max: 240
+                      severity:
+                        green: 0
+                        yellow: 230
+                        red: 240
+                    - type: gauge
+                      name: Tensão de Saída
+                      entity: sensor.tsshara_voltagem_de_saida
+                      min: 0
+                      max: 240
+                      severity:
+                        green: 0
+                        yellow: 230
+                        red: 240
+                      unit: V
+              - type: conditional
+                conditions:
+                  - condition: state
+                    entity: sensor.tsshara_dados_do_status
+                    state: unavailable
+                card:
+                  type: markdown
+                  content: Nobreak is not available
