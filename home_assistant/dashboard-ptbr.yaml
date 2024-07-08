@@ -48,7 +48,7 @@ views:
                         red: 0
                       max: 100
                     - type: gauge
-                      name: Carregamento
+                      name: Carga
                       entity: sensor.tsshara_carregar
                       min: 0
                       max: 100
