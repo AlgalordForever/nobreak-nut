@@ -16,6 +16,8 @@ echo ""
 echo ""
 echo ""
 
+sleep 10
+
 echo "-------------------------------Running 2/3-------------------------------"
 /etc/init.d/nut-server restart
 if [ $? -ne 0 ]; then
