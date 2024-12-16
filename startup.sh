@@ -16,7 +16,7 @@ echo ""
 echo ""
 echo ""
 
-sleep 10
+sleep 30
 
 echo "-------------------------------Running 2/3-------------------------------"
 /etc/init.d/nut-server restart
@@ -27,7 +27,7 @@ echo ""
 echo ""
 echo ""
 
-sleep 10
+sleep 30
 
 echo "-------------------------------Running 3/3-------------------------------"
 upsc tsshara
