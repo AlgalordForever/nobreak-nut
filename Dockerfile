@@ -13,9 +13,6 @@ RUN apt-get update && \
     apt-get install -y nut-client nut-server net-tools iputils-ping && \
     rm -rf /var/lib/apt/lists/*
 
-RUN usermod -aG dialout nut
-RUN usermod -aG dialout root
-
 # Copy the custom files
 COPY ./etc/nut/ups.conf /etc/nut/ups.conf
 COPY ./etc/nut/upsd.conf /etc/nut/upsd.conf
