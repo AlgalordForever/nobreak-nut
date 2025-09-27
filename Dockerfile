@@ -14,6 +14,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 RUN usermod -aG dialout nut
+RUN usermod -aG dialout root
 
 # Copy the custom files
 COPY ./etc/nut/ups.conf /etc/nut/ups.conf
