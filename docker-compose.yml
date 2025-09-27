@@ -14,3 +14,8 @@ services:
       - /dev/ttyACM0:/dev/ttyACM0
     ports:
       - '3493:3493'
+
+    deploy:
+      resources:
+        limits:
+          memory: 256M
