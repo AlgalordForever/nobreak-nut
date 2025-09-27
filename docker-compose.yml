@@ -6,16 +6,11 @@ services:
       dockerfile: Dockerfile
       args:
         USER_ID: 0  # Set the desired user ID
-        # GROUP_ID: 1000  # Set the desired group ID
-    restart: unless-stopped
+#        GROUP_ID: 1000  # Set the desired group ID
+    restart: always
     stdin_open: true
     tty: true
     devices:
       - /dev/ttyACM0:/dev/ttyACM0
     ports:
       - '3493:3493'
-
-    deploy:
-      resources:
-        limits:
-          memory: 256M
