@@ -12,7 +12,5 @@ services:
     tty: true
     devices:
       - /dev/ttyACM0:/dev/ttyACM0
-    group_add:
-      - dialout
     ports:
       - '3493:3493'
