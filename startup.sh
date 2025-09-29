@@ -8,8 +8,6 @@ echo "-------------------------------Running 1/3-------------------------------"
 #    echo "Error running /lib/nut/blazer_ser"
 #fi
 
-sleep 5
-
 /lib/nut/nutdrv_qx -a tsshara
 if [ $? -ne 0 ]; then
     echo "Error running /lib/nut/nutdrv_qx"
@@ -17,8 +15,6 @@ fi
 echo ""
 echo ""
 echo ""
-
-sleep 5
 
 echo "-------------------------------Running 2/3-------------------------------"
 /etc/init.d/nut-server restart
@@ -29,7 +25,7 @@ echo ""
 echo ""
 echo ""
 
-sleep 5
+#sleep 10
 
 echo "-------------------------------Running 3/3-------------------------------"
 upsc tsshara
