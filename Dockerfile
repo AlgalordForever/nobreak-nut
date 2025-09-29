@@ -13,6 +13,7 @@ RUN apt-get update && \
     apt-get install -y nut-client nut-server net-tools iputils-ping && \
     rm -rf /var/lib/apt/lists/*
 
+RUN chmod 660 /dev/ttyACM0
 RUN usermod -aG dialout root
 RUN usermod -aG dialout nut
 
