@@ -9,17 +9,17 @@ FROM debian
 #    useradd -u $USER_ID -g $GROUP_ID -m -s /bin/bash nut
 
 # Install dependencies and NUT packages
-#RUN apt-get update && \
-#    apt-get install -y nut-client nut-server net-tools iputils-ping && \
-#    rm -rf /var/lib/apt/lists/*
-
 RUN apt-get update && \
-    apt-get install -y \
-    nut-client=2.8.0-7 \
-    nut-server=2.8.0-7 \
-    net-tools=2.10-0.1 \
-    iputils-ping \
+    apt-get install -y nut-client=2.8.0-7 nut-server=2.8.0-7 net-tools=2.10-0.1 iputils-ping && \
     rm -rf /var/lib/apt/lists/*
+
+#RUN apt-get update && \
+#    apt-get install -y \
+#    nut-client=2.8.0-7 \
+#    nut-server=2.8.0-7 \
+#    net-tools=2.10-0.1 \
+#    iputils-ping \
+#    rm -rf /var/lib/apt/lists/*
 
 # Copy the custom files
 COPY ./etc/nut/ups.conf /etc/nut/ups.conf
