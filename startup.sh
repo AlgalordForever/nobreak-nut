@@ -21,7 +21,8 @@ echo ""
 sleep 5
 
 echo "-------------------------------Running 2/3-------------------------------"
-/etc/init.d/nut-server restart
+#/etc/init.d/nut-server restart
+upsd -D
 if [ $? -ne 0 ]; then
     echo "Error restarting nut-server"
 fi
