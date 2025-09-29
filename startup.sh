@@ -10,7 +10,7 @@ echo "-------------------------------Running 1/3-------------------------------"
 
 sleep 5
 
-/lib/nut/nutdrv_qx -a tsshara -D
+/lib/nut/nutdrv_qx -a tsshara
 if [ $? -ne 0 ]; then
     echo "Error running /lib/nut/nutdrv_qx"
 fi
