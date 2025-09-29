@@ -21,7 +21,7 @@ echo ""
 sleep 5
 
 echo "-------------------------------Running 2/3-------------------------------"
-/etc/init.d/nut-server restart
+#/etc/init.d/nut-server restart
 if [ $? -ne 0 ]; then
     echo "Error restarting nut-server"
 fi
@@ -32,7 +32,7 @@ echo ""
 sleep 5
 
 echo "-------------------------------Running 3/3-------------------------------"
-upsc tsshara
+#upsc tsshara
 if [ $? -ne 0 ]; then
     echo "Error running upsc"
 fi
